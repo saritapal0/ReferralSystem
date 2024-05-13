@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import img from "../assets/img.png";
-import bgimg from '../assets/backimg.jpg'
+import bgimg from "../assets/backimg.jpg";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
@@ -45,7 +45,7 @@ const center = {
   left: "30%",
 };
 
-export default function ForgotPassword() {
+export default function Register() {
   const [open, setOpen] = useState(false);
   const [remember, setRemember] = useState(false);
   const vertical = "top";
@@ -111,7 +111,7 @@ export default function ForgotPassword() {
                   backgroundSize: "cover",
                   height: "70vh",
                   minHeight: "400px",
-                  backgroundColor: "#9fa8da",
+                  backgroundColor: "#3b33d5",
                 }}
               >
                 <ThemeProvider theme={darkTheme}>
@@ -124,7 +124,7 @@ export default function ForgotPassword() {
                         <LockOutlinedIcon />
                       </Avatar>
                       <Typography component="h1" variant="h4">
-                        Reset Password
+                        Create Account
                       </Typography>
                     </Box>
                     <Box
@@ -139,9 +139,31 @@ export default function ForgotPassword() {
                             required
                             fullWidth
                             id="email"
-                            label="Email"
+                            label="Username"
                             name="email"
                             autoComplete="email"
+                          />
+                        </Grid>
+                        <Grid item xs={12} sx={{ ml: "3em", mr: "3em" }}>
+                          <TextField
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="new-password"
+                          />
+                        </Grid>
+                        <Grid item xs={12} sx={{ ml: "3em", mr: "3em" }}>
+                          <TextField
+                            required
+                            fullWidth
+                            name="confirmpassword"
+                            label="Confirm Password"
+                            type="password"
+                            id="confirmpassword"
+                            autoComplete="new-password"
                           />
                         </Grid>
                         <Grid item xs={12} sx={{ ml: "5em", mr: "5em" }}>
@@ -159,7 +181,7 @@ export default function ForgotPassword() {
                               backgroundColor: "#FF9A01",
                             }}
                           >
-                            Send Reset Link
+                            Register
                           </Button>
                         </Grid>
                         <Grid item xs={12} sx={{ ml: "3em", mr: "3em" }}>
@@ -169,14 +191,14 @@ export default function ForgotPassword() {
                               component="span"
                               style={{ marginTop: "10px" }}
                             >
-                              Login to your Account.
+                              Already have an Account?{" "}
                               <span
                                 style={{ color: "#e8eaf6", cursor: "pointer" }}
                                 onClick={() => {
-                                  navigate("/");
-                                }}
+                                    navigate("/");
+                                  }}
                               >
-                                {" "}Sign In
+                                Sign In
                               </span>
                             </Typography>
                           </Stack>
