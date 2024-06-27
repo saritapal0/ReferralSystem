@@ -14,7 +14,7 @@ function generateReferralCode() {
     return Math.random().toString(36).substr(2, 8);
 }
 
-const port = 3000; 
+const port = 4000; 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
